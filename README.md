@@ -23,3 +23,14 @@ Your fair dealing or fair use rights, or other applicable copyright exceptions a
 The author's moral rights;
 Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
 Notice — For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to this web page.
+
+===============================================================================
+
+#For working on this project you should have good understanding of Python and Django 1.4. 
+# You have to setup your settings.py and their variables . 
+
+
+-------------------------------------------
+Ashwini Kumar is developer of this project . He wroked under mentorship of Mr.Asnupam Saraph. 
+
+You can checkout his repository by following "ashwini7security" on github . 
