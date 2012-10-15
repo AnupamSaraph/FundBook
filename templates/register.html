@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang='en'>
+
+{% block extrahead %}
+<meta charset="utf-8">
+	<script src="{{MEDIA_URL}}/jquery/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<script src= "{{MEDIA_URL}}/jquery/js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+	<script>
+	$(function() {
+	$( "#id_register_date" ).datepicker({
+		showButtonPanel: true
+
+	});
+	});
+	$(function() {
+		$("#jaao").progressbar({
+			value:37
+	});
+	});
+	</script>
+
+<style>
+/* setup */
+body {
+    margin:0;
+    padding:0;
+    background:#092e20;
+    color:white;
+}
+#container {
+    position:relative;
+    min-width:55em;
+    max-width:300em;
+}
+#homepage #container {
+    max-width:300em;
+}
+/* LINKS */
+
+a {text-decoration: none;
+  }
+a img {border: none;
+      }
+a:link, a:visited {
+    color:#ffc757;
+}
+#content-main a:link, #content-main a:visited {
+    color:#ab5603;
+    text-decoration:underline;
+}
+a:hover {
+    color:#ffe761;
+}
+#content-main a:hover {
+    background-color:#E0FFB8;
+    color:#234f32;
+    text-decoration:none;
+}
+#content-main h2 a, #content-main h3 a {
+    text-decoration:none !important;
+}
+div.register_div
+{
+text-align:right;
+text-shadow: 5px 5px 5px #FF0000;
+} 
+#header {
+    position:relative;
+    height:3.5em;
+    background:#092e20;
+    margin-left:20px;
+}
+#footer h1#logo {
+    margin:0;
+    width:111px;
+    height:41px;
+    position:absolute;
+    bottom:10px;
+    left:25px;
+}
+/* COLUMNS */
+
+#columnwrap {
+    background:#234f32;
+    padding-bottom:5px;
+}
+#subwrap {
+    background:#326342;
+    width:73%;
+    float:left;
+    padding-bottom:5px;
+}
+#content-main {
+    float:left;
+    width:70%;
+    background:white;
+    color:black;
+    padding-bottom:10px;
+}
+#content-main * {
+    margin-left:22px;
+    margin-right:24px;
+}
+#content-main * * {
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#content-extra {
+
+    float:right;
+    margin-right:5%;
+}
+/* CONTENT */
+
+h1,h2,h3,h4 {
+    margin-top:.8em;
+    font-family:"Trebuchet MS",sans-serif;
+    font-weight:normal;
+}
+hr {
+    color:#ccc;
+    background-color:#ccc;
+    height:1px;
+    border:0;
+}
+h2.deck {
+    margin-bottom:.6em;
+    color:#487858;
+}
+/* BILLBOARDS */
+
+#billboard {
+    background:#94da3a /*url(../img/site/bbdsm_bg.gif)*/ repeat-x; 
+    border-bottom:6px solid #092e20;
+}
+#billboard h2 {
+    margin-left:20px;
+}
+#homepage #billboard {
+    background-image:/* url(../img/site/bbd_bg.gif); */
+}
+#homepage #billboard h2 {
+    margin-right:0px;
+    text-indent:-5000px;
+    height:80px;
+    width:633px;
+/*   background:url(../img/site/bbd_homepage.gif) no-repeat; */
+}
+/* FOOTER */
+
+#footer{
+    clear:both;
+    color:#487858;
+    padding:10px 20px;
+    font-size:90%;
+}
+</style>
+
+{% endblock %}
+<body id="homepage" class="default" >
+{% block content %}
+<div id="container">
+	<div id="header" >
+<h1> Fundbook - Open it :)
+</h1>
+</div>
+<!-- end header -->
+
+<div id= "billboard">
+<h2>Fundbook( Fill your dreams with happiness )</h2>
+</div>
+
+<div id="cloumnwrap">
+	<div id="subwrap">
+		<div id="content-main">
+		<h1> Meet Fundbook </h1>
+		<h2 class="deck"> fundbook is a platform which help organization to pay their CSR . It also helps to social bodies in acieving their objectives.</h2>
+<p> Fundbook is build on Django which focuses on automating as much as possible and adhering to the <a href="http://c2.com/cgi/wiki?DontRepeatYourself">
+<abbr title="Don't Repeat yourself">DRY</abbr>
+principle </a> <br/>
+CSR is titled to aid an organization's mission as well as a guide to what the company stands for and will uphold to its consumers. Development business ethics is one of the forms of applied ethics that examines ethical principles and moral or ethical problems that can arise in a business environment. ISO 26000 is the recognized international standard for CSR. Public sector organizations (the United Nations for example) adhere to the triple bottom line (TBL). It is widely accepted that CSR adheres to similar principles but with no formal act of legislation.
+<br/>
+one of the forms of applied ethics that examines ethical principles and moral orethical problems that can arise in a business environment. ISO 26000 is the recognized international standard for CSR. Public sector organizations (the United Nations for example) adhere to the triple bottom line (TBL). It is widely accepted that CSR adheres to similar principles but with no formal act of legislation.
+
+</p>
+</div>
+
+<!--end #content-main -->
+
+
+<div id="content-extra" class="extra">
+<form action="" method="post">
+{% csrf_token %}
+
+<!-- registration for start -->
+<div class = "register_div">
+	
+	{% if forms.errors %}<p> Please correct the following fields:</p> {% endif %}
+	<h4>Connect with us:  <a href="/login/">Signin</a> </h4>
+	{% if form.username.errors %}<p class="error">{{ form.username.errors}}</p>{% endif %} 
+	<p><label for="username"{% if form.username.errors %} class="error" {% endif %}> Username:</label></p>
+	<p>{{ form.username }}</p>
+</div>
+<div class="register_div">
+	{% if form.email.errors %} <p class="error">{{ form.email.errors }}</p> {% endif %}
+	<p><label for="email"{% if form.email.errors %} class="error" {% endif %}> Email:</label></p>
+	<p> {{ form.email }} </p>
+</div>
+<div class = "register_div">
+	{% if form.password.errors %} <p class="error"> {{ form.password.errors }}</p> {% endif %}
+        <p><label for="password"{% if form.password.errors %} class="error" {% endif %}> Password:</label></p>
+        <p> {{ form.password }} </p>
+</div>
+<div class = "register_div">
+	{% if form.password1.errors %} <p class="error"> {{ form.password1.errors }}</p> {% endif %}
+        <p><label for="password1"{% if form.password1.errors %} class="error" {% endif %}> Verify Password:</label></p>
+        <p> {{ form.password1 }} </p>
+</div>
+<div class="register_div">
+        {% if form.name.errors %} <p class="error">{{ form.name.errors }}</p> {% endif %}
+        <p><label for="name"{% if form.name.errors %} class="error" {% endif %}> Organization Name:</label></p>
+        <p> {{ form.name }} </p>
+</div>
+
+<div id="register_date" class = "register_div">
+        {% if form.register_date.errors %} <p class="error"> {{ form.register_date.errors }}</p> {% endif %}
+        <p><label for="register_date"{% if form.register_date.errors %} class="error" {% endif %}> Register Date:</label></p>
+        <p> {{ form.register_date }} </p>
+</div>
+<div id="jaao" class="register_div">
+<input type="Submit" value="Register Me" alt="register"/>
+</div>
+</form>
+</div>
+<!-- end #content-extra -->
+<hr>
+<div id="footer">
+<p>
+@ 2011-2013
+<a href="https://www.djangoproject.com/foundation/">Fundbook Foundation and</a>
+<a href="http://mediatemple.net/">Linux Web hosting</a><br/>
+Site Developer:-
+<a href="https://www.facebook.com/ashwinikspy?ref=tn_tnmn"> Ashwini Kumar</a>
+and
+<a href="https://www.facebook.com/anupriya.das.10?ref=ts"> Anupriya Das</a><br/>
+Project Mentor:-
+<a href="https://www.facebook.com/anupam.saraph?ref=ts"> Anupam Shraph </a>
+</p>
+<p>
+<h1 id="logo">This site is developed on 
+<img src="https://www.djangoproject.com/m/img/site/hdr_logo.gif" alt="Django">
+</h1>
+</p>
+
+</div>
+<!-- end #footer -->
+</div>
+<!-- end #contatiner -->
+
+ {% endblock %}
+
+</body>
+</html>

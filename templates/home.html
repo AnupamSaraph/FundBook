@@ -1,0 +1,273 @@
+
+<!DOCTYPE html >
+<html lang='en' >
+<title>Fundbook help you paying your CSR</title>
+
+{% block extrahead %}
+<style>
+body {
+    margin:0;
+    padding:0;
+    background:#092e20;
+    color:white;
+}
+/* NAV */
+
+#nav-global {
+    position:absolute;
+    margin:0;
+    bottom:0;
+    right:0;
+    font-family:"Trebuchet MS",sans-serif;
+    white-space:nowrap;
+}
+#nav-global li {
+    display:block;
+    float:left;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#nav-global a {
+    display:block;
+    float:left;
+    padding:5em 16px 10px 16px;
+    background:#092e20;
+}
+#nav-global a:hover {
+    color:white;
+    background:#234f32;
+}
+#homepage #nav-homepage a,
+#overview #nav-overview a,
+#download #nav-download a,
+#documentation #nav-documentation a,
+#weblog #nav-weblog a,
+#community #nav-community a,
+#blogroll #nav-blogroll a,
+#code #nav-code a {
+    color:white;
+    background:#092e20 ;
+}
+url(../img/site/nav_bg.gif) bottom repeat-x
+#container {
+    position:relative;
+    min-width:55em;
+    max-width:300em;
+}
+#homepage #container {
+    max-width:300em;
+}
+/* LINKS */
+
+a {text-decoration: none;
+   text-shadow:;
+  }
+a img {border: none;
+      }
+a:link, a:visited {
+    color:#ffc757;
+}
+#content-main a:link, #content-main a:visited {
+    color:#ab5603;
+    text-decoration:underline;
+}
+a:hover {
+    color:#ffe761;
+}
+#content-main a:hover {
+    background-color:#E0FFB8;
+    color:#234f32;
+    text-decoration:none;
+}
+#content-main h2 a, #content-main h3 a {
+    text-decoration:none !important;
+}
+div.register_div
+{
+text-align:right;
+text-shadow: 5px 5px 5px #FF0000;
+}
+#header {
+    position:relative;
+    height:3.5em;ckground:#092e20;
+    margin-left:20px;
+}
+#footer h1#logo {
+    margin:0;
+    width:111px;
+    height:41px;
+    position:absolute;
+    bottom:10px;
+    left:25px;
+}
+/* COLUMNS */
+
+#columnwrap {
+    background:#234f32;
+    padding-bottom:5px;
+}
+#subwrap {
+    background:#326342;
+    width:73%;
+    float:left;
+    padding-bottom:5px;
+}
+#content-main {
+    float:left;
+    width:70%;
+    background:white;
+    color:black;
+    padding-bottom:10px;
+}
+
+#content-main * {
+    margin-left:22px;
+    margin-right:24px;
+}
+#content-main * * {
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#content-extra {
+
+    float:right;
+    margin-right:5%;
+}
+
+/* CONTENT */
+h1,h2,h3,h4 {
+    margin-top:.8em;
+    font-family:"Trebuchet MS",sans-serif;
+    font-weight:normal;
+}
+hr {
+    color:#ccc;
+    background-color:#ccc;
+    height:1px;
+    border:0;
+}
+h2.deck {
+    margin-bottom:.6em;
+    color:#487858;
+}
+/* BILLBOARDS */
+
+#billboard {
+    background:#94da3a /*url(../img/site/bbdsm_bg.gif)*/ repeat-x;
+    border-bottom:6px solid #092e20;
+}
+#billboard h2 {
+    margin-left:20px;
+}
+#homepage #billboard {
+    background-image:/* url(../img/site/bbd_bg.gif); */
+}
+#homepage #billboard h2 {
+    margin-right:0px;
+    text-indent:-5000px;
+    height:80px;
+    width:633px;
+/*   background:url(../img/site/bbd_homepage.gif) no-repeat; */
+}
+/* FOOTER */
+
+#footer{
+    clear:both;
+    coloir:#487858;
+    padding:10px 20px;
+    font-size:90%;
+}
+
+                 
+</style>
+{% endblock  %}
+<body id="homepage" class="default">
+	<!-- Start Header -->
+	<div id="header">
+		<div id="container">
+			<h1><a href="#" title="GetFund">Fundbook<span></span></a></h1>
+	
+			<!-- top header navigation -->
+			<ul id="nav-global">
+				<li id="nav-homepage"><a href="/home/">Home</a></li>
+				<li id="nav-project"><a href="/project/">Projects</a></li>
+				<li id="profile"><a href="/profile/">Profile</a>
+				<li id="nav-contact"><a href="/contact/">Contact Us</a></li>
+				<li id="nav-aboutus"><a href="/aboutus/">About us</a></li>
+				<li id="logout"><a href="/logout/">Logout</a></li>
+</ul>
+</div></div>
+<!-- banner message and building background -->
+<h2 class="deck">
+		Funbook helps you in achieving your dreams ! </h2>
+			<hr/> <br/>
+	
+	
+	<!-- Start Main Content -->
+	<div id="cloumnwrap">
+		<div id="subwrap">
+			<div id="content-main">
+			<h2 class="deck">Projects</h2>
+			<ul>
+				<li><a href="/project/">Ngo Projects</a></li>
+				<li><a href="/project/">Corporate Projects</a></li>
+				<li><a href="/profile/">Profile</a></li>
+				<li><a href="/volunteer/">Volunteer</a></li>
+				
+			</ul>
+			<h2 class="deck">News</h2>
+			
+				<p>Our new corporate projects are here </p>
+				<p>We have some ngo projects</p>
+			
+<!-- end first main content-->
+		<!-- main content area 2-->
+		<!--	<div id="content-extra" class="extra"> -->
+				<h2 class="deck">Weekly News Updates</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipis cing elit, sed diam nonummy nibh euismod tinci dunt ut laorenim ad minim veniam, quis nostrud exerci tation ullam corper suscipit lobortis nisl ut aliq eet dolore magna aliquam erat volut pat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+			<br/>
+				<h2 class="deck">Current Employment News</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipis cing elit, sed diam nonummy nibh euismod tinci dunt ut laorenim ad minim veniam, quis nostrud exerci tation ullam corper suscipit lobortis nisl ut aliq eet dolore magna aliquam erat volut pat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipis cing elit.</p>
+			
+			
+		
+				<h3>Links to Help You Succeed</h3>
+				<p>Follow these links to learn more great business tips</p>
+					<ul>
+					<li><a href="#">Keep your clients in the know</a></li>
+					<li><a href="#">Current specials and discounts</a></li>
+					<li><a href="#">Links to your services and promos</a></li>
+				</ul>
+				<h3>Recent partners Lists</h3>
+				<p>Here is a list of some of our partners.</p>
+				<ul>
+					<li><a href="#">Keep your partners in the know</a></li>
+					<li><a href="#">Current specials </a></li>
+					<li><a href="#">Links to your services and promos</a></li>
+				</ul>
+			</div>
+
+				
+				
+
+			<hr />
+		</div>
+	</div>
+</div>
+	<!-- Start Footer -->
+	<div id="footer">
+		<div class="container">
+			<a id="designby" href="http://www.getfund.com/" title="Design by getfund">WEB DESIGN BY fundbook</a>
+			<ul id="footer_navigation">
+				<li><a href="/home/">Home</a></li>
+				<li><a href="/aboutus/">About</a></li>
+				
+				<li><a href="/project">Projects</a></li>
+				<li><a href="/contact/">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

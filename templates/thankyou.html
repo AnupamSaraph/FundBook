@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<title> Thanks for your request</title>
+{% block extrahead  %}
+<style>
+#id_contact {
+text-align:center;
+margin-left:500px;
+margin-right:500px;
+color:#234f32;
+background-color:#E0FFB8;
+text-shadow: 5px 5px 5px #FF0000;
+height:30em;
+width:27em;
+position:relative;
+}
+#id_contact strong:hover {
+    background-color:#E0FFB8;
+    color:#234f32;
+    text-decoration:none;
+   
+}
+
+body{
+background:#092e20;
+}
+
+</style>
+{% endblock  %}
+{% block content %}
+<body>
+
+<div id="id_contact">
+<a href="/home/" ><strong> Home</strong></a>
+<br/> <br/>
+<strong> Contact Information </strong>
+
+<p> Thanks you for contacting us. </p>
+
+<p> We will attempt to get back to you within 48 hours</p>
+
+</body>
+</div>
+{% endblock  %}
+
+</html>

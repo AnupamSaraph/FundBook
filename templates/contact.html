@@ -1,0 +1,75 @@
+<!DOCTYPE  html>
+<title> Contact Us | fundbook </title>
+{% block extrahead %}
+<style>
+#id_contact {
+text-align:center;
+margin-left:300px;
+margin-right:500px;
+color:#234f32;
+background-color:#E0FFB8;
+text-shadow: 5px 5px 5px #FF0000;
+height:40em;
+width:50em;
+position:relative;
+}
+#id_contact strong:hover {
+    background-color:#E0FFB8;
+    color:#234f32;
+    text-decoration:none;
+   
+}
+
+body{
+background:#092e20;
+}
+a:link, a:visited {
+    color:#ffc757;
+}
+
+</style>
+
+{% endblock %}
+{% block content  %}
+<body>
+
+<div id="id_homy>" >
+<a href="/home/" ><strong> Home</strong></a>
+</div>
+
+
+<div id="id_contact">
+<h2 class="deck"> Contact us </h2>
+<br/>
+<p>We are eager to hear from you. Please fill in as much information as possible. </p>
+
+
+
+<form action="/thankyou/" method="post"> 
+{% csrf_token %}
+<form action="/contact/" method="post">
+<p><label for="id_subject">Subject:</label>
+    <input id="id_subject" type="text" name="subject" maxlength="100" /></p>
+<p><label for="id_message">Message:</label>
+    <textarea name="message" id="id_message" row="15" cols="32" > </textarea></p>
+<p><label for="id_sender">Sender:</label>
+    <input type="text" name="sender" id="id_sender" /></p>
+<p><label for="id_cc_myself">Cc myself:</label>
+    <input type="checkbox" name="cc_myself" id="id_cc_myself" /></p>
+<input type="submit" value="Submit" />
+</form>
+</div>
+<div id="footer">
+		<div class="container">
+			<a id="designby" href="http://www.getfund.com/" title="Design by getfund">WEB DESIGN BY fundbook</a>
+			<ul id="footer_navigation">
+				<li><a href="/home/">Home</a></li>
+				<li><a href="/aboutus/">About</a></li>
+				
+				<li><a href="/project">Projects</a></li>
+				<li><a href="/contact/">Contact</a></li>
+			</ul>
+		</div>
+</body>
+{% endblock  %}
+</html>

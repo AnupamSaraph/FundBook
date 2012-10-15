@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+{% block style %}
+<link type="text/css" href="{{MEDIA_URL}}/media/stylesheets/sample.css" rel="stylesheet" />
+{% block extrahead %}
+<style>
+#id_login {
+text-align:center;
+margin-left:500px;
+margin-right:500px;
+color:#234f32;
+background-color:#E0FFB8;
+text-shadow: 5px 5px 5px #FF0000;
+height:30em;
+width:27em;
+position:relative;
+}
+
+#id_login strong:hover {
+    background-color:#E0FFB8;
+    color:#234f32;
+    text-decoration:none;
+}
+body {
+background:#092e20;
+ }
+</style>
+{% endblock %}
+{% endblock %}
+{% block content %}
+<body>
+<div id = "id_login" >
+<form action="" method="post">
+{% csrf_token %}
+{% if forms.errors %}<p> <i> Please correct the following dields: </i></p> {% endif %}
+
+<div class = "">
+	{% if form.username.errors %}<p class="error">{{ form.username.errors}}</p>{% endif %} 
+	<p><label for="username"{% if form.username.errors %} class="error" {% endif %}><strong> Username: </strong></label></p>
+	<p>{{ form.username }}</p>
+</div>
+<div class = "">
+	{% if form.password.errors %} <p class="error"> {{ form.password.errors }}</p> {% endif %}
+        <p><label for="password"{% if form.password.errors %} class="error" {% endif %}><strong> Password:</strong></label></p>
+        <p> {{ form.password }} </p>
+</div>
+
+<p><input type="Submit" value="Log me in Me " alt="register"/></p>
+</form>
+</div>
+</body>
+{% endblock %}
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<title>Projects|fundbook </title>
+<style>
+body {
+    margin-left:30px;
+    padding:0;
+    background:#092e20;
+    color:white;
+}
+
+/* NAV */
+
+#nav-global {
+    position:absolute;
+    margin:0;
+    bottom:0;
+    right:0;
+    font-family:"Trebuchet MS",sans-serif;
+    white-space:nowrap;
+}
+#nav-global li {
+    display:block;
+    float:left;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+#nav-global a {
+    display:block;
+    float:left;
+    padding:5em 16px 10px 16px;
+    background:#092e20;
+}
+#nav-global a:hover {
+    color:white;
+    background:#234f32;
+}
+#homepage #nav-homepage a,
+#overview #nav-overview a,
+#download #nav-download a,
+#documentation #nav-documentation a,
+#weblog #nav-weblog a,
+#community #nav-community a,
+#blogroll #nav-blogroll a,
+#code #nav-code a {
+    color:white;
+    background:#092e20 ;
+}
+
+#container {
+    position:relative;
+    min-width:55em;
+    max-width:300em;
+}
+#homepage #container {
+    max-width:300em;
+}
+/* LINKS */
+
+a {text-decoration: none;
+   text-shadow:;
+  }
+
+a img {border: none;
+      }
+a:link, a:visited {
+    color:#ffc757;
+}
+
+h2.deck {
+    margin-bottom:.6em;
+    color:#487858;
+}
+h1,h2,h3,h4 {
+    margin-top:.8em;
+    font-family:"Trebuchet MS",sans-serif;
+    font-weight:normal;
+}
+
+</style>
+{% block content %}
+<body id="homepage" class="default">
+	<!-- Start Header -->
+	<div id="header">
+		<div id="container">
+			<h2><a href="#" title="fundbook">Fundbook<span></span></a></h2>
+	
+			<!-- top header navigation -->
+			<ul id="nav-global">
+				<li id="nav-homepage"><a href="/home/">Home</a></li>
+				<li id="nav-project"><a href="/project/">Projects</a></li>
+				<li id="profile"><a href="/profile/">Profile</a>
+				<li id="nav-contact"><a href="/contact/">Contact Us</a></li>
+				<li id="nav-aboutus"><a href="/aboutus/">About us</a></li>
+				<li id="logout"><a href="/logout/">Logout</a></li>
+</ul></div>
+<!-- banner message and building background -->
+<h2 class="deck">
+		Funbook helps you in achieving your dreams ! </h2>
+			<hr/> <br/>
+
+<form action="/thankyou/" method="post">
+{% csrf_token%}
+<div class = "register_div">
+
+	<p><label for="title"{% if form.title %} {% endif %}> Project  Title:</label></p>
+	<p>{{ form.title }}</p>
+</div>
+<div class="register_div">
+	<p><label for="body"{% if form.body %}  {% endif %}> Project Discription:</label></p>
+	<p> {{ form.body }} </p>
+</div>
+<div class = "register_div">
+        <p><label for="start_date"{% if form.start_date %} {% endif %}> Project Start Date:</label></p>
+        <p> {{ form.start_date }} </p>
+</div>
+<div class = "register_div">
+        <p><label for="address"{% if form.address %} {% endif %}> Contact Address:</label></p>
+        <p> {{ form.address }} </p>
+</div>
+<div class="register_div">
+        <p><label for="contact_email"{% if form.contact_email %}  {% endif %}>Mail us:</label></p>
+        <p> {{ form.contact_email }} </p>
+</div>
+<div id="jaao" class="register_div">
+<input type="Submit" value="Save Project" alt="save"/>
+</div>
+</form>
+</div>
+</body>
+{% endblock %}
+</html>
